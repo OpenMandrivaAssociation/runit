@@ -10,7 +10,6 @@ Group:		System/Base
 URL:		http://smarden.org/runit/
 Source0:	http://smarden.org/runit/%{name}-%{version}.tar.bz2
 BuildRequires:	dietlibc-devel >= 0.27-9mdk
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 runit is a daemontools alike replacement for SysV-init and other
