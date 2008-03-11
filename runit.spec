@@ -1,15 +1,11 @@
-%define _enable_debug_packages %{nil}
-%define debug_package          %{nil}
-
 Summary:	A UN*X init scheme with service supervision
 Name:		runit
 Version:	1.7.2
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	BSD
 Group:		System/Base
 URL:		http://smarden.org/runit/
 Source0:	http://smarden.org/runit/%{name}-%{version}.tar.bz2
-BuildRequires:	dietlibc-devel >= 0.27-9mdk
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
@@ -26,10 +22,11 @@ handles the tasks necessary to shutdown and halt or reboot.
 %setup -q -n admin
 
 %build
+%serverbuild
 
 pushd %{name}-%{version}/src
-    echo "diet gcc -Os -pipe" > conf-cc
-    echo "diet gcc -Os -static -s" > conf-ld
+    echo "gcc $CFLAGS -pipe" > conf-cc
+    echo "gcc $CFLAGS -s" > conf-ld
     make
 popd
  
@@ -76,5 +73,3 @@ install -m0644 %{name}-%{version}/man/*.8 %{buildroot}%{_mandir}/man8/
 %attr(0644,root,root) %{_mandir}/man8/sv.8*
 %attr(0644,root,root) %{_mandir}/man8/svlogd.8*
 %attr(0644,root,root) %{_mandir}/man8/utmpset.8*
-
-
