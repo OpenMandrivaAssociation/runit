@@ -1,21 +1,20 @@
 Summary:	A UN*X init scheme with service supervision
 Name:		runit
-Version:	1.7.2
-Release:	%mkrel 2
+Version:	1.9.0
+Release:	%mkrel 1
 License:	BSD
 Group:		System/Base
 URL:		http://smarden.org/runit/
-Source0:	http://smarden.org/runit/%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-buildroot
+Source0:	http://smarden.org/runit/%{name}-%{version}.tar.gz
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
-runit is a daemontools alike replacement for SysV-init and other
-init schemes. It currently runs on GNU/Linux, OpenBSD, FreeBSD,
-and can easily be adapted to other Unix operating systems. runit
-implements a simple three-stage concept. Stage 1 performs the
-system's one-time initialization tasks. Stage 2 starts the
-system's uptime services (via the runsvdir program). Stage 3
-handles the tasks necessary to shutdown and halt or reboot. 
+runit is a daemontools alike replacement for SysV-init and other init schemes.
+It currently runs on GNU/Linux, OpenBSD, FreeBSD, and can easily be adapted to
+other Unix operating systems. runit implements a simple three-stage concept.
+Stage 1 performs the system's one-time initialization tasks. Stage 2 starts the
+system's uptime services (via the runsvdir program). Stage 3 handles the tasks
+necessary to shutdown and halt or reboot. 
 
 %prep
 
@@ -31,7 +30,7 @@ pushd %{name}-%{version}/src
 popd
  
 %install
-[ -n "%{buildroot}" -a "%{buildroot}" != / ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 install -d %{buildroot}/sbin/
 install -d %{buildroot}%{_mandir}/man8
@@ -45,7 +44,7 @@ popd
 install -m0644 %{name}-%{version}/man/*.8 %{buildroot}%{_mandir}/man8/
 
 %clean
-[ -n "%{buildroot}" -a "%{buildroot}" != / ] && rm -rf %{buildroot}
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
