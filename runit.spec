@@ -6,6 +6,7 @@ License:	BSD
 Group:		System/Base
 URL:		http://smarden.org/runit/
 Source0:	http://smarden.org/runit/%{name}-%{version}.tar.gz
+BuildRequires:	glibc-static-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
