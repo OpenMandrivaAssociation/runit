@@ -3,8 +3,8 @@
 
 Summary:	A UN*X init scheme with service supervision
 Name:		runit
-Version:	2.0.0
-Release:	%mkrel 2
+Version:	2.1.0
+Release:	%mkrel 1
 License:	BSD
 Group:		System/Base
 URL:		http://smarden.org/runit/
