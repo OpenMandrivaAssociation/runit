@@ -38,8 +38,8 @@ popd
 %endif
 
 pushd %{name}-%{version}/src
-echo "%{__cc} -Os -pipe" > conf-cc
-echo "%{__cc} -Os -static -s" > conf-ld
+echo "%{__cc} %{optflags}" > conf-cc
+echo "%{__cc} %{ldflags}" > conf-ld
 %make
 popd
 
