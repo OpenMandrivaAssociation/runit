@@ -38,6 +38,7 @@ popd
 %endif
 
 pushd %{name}-%{version}/src
+%define __cc gcc
 echo "%{__cc} %{optflags}" > conf-cc
 echo "%{__cc} %{ldflags}" > conf-ld
 %make
