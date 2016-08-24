@@ -13,7 +13,7 @@ Source0:	http://smarden.org/runit/%{name}-%{version}.tar.gz
 %if %{with diet}
 BuildRequires:	dietlibc-devel >= 0.32
 %endif
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRequires:	glibc-static-devel
 
 %description
 runit is a daemontools alike replacement for SysV-init and other init schemes.
