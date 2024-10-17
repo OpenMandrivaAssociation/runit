@@ -8,7 +8,7 @@ Version:	2.1.2
 Release:	1
 License:	BSD
 Group:		System/Base
-URL:		http://smarden.org/runit/
+URL:		https://smarden.org/runit/
 Source0:	http://smarden.org/runit/%{name}-%{version}.tar.gz
 %if %{with diet}
 BuildRequires:	dietlibc-devel >= 0.32
