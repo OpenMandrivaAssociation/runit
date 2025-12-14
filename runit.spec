@@ -4,7 +4,7 @@
 
 Summary:	A UN*X init scheme with service supervision
 Name:		runit
-Version:	2.2.0
+Version:	2.3.0
 Release:	1
 License:	BSD
 Group:		System/Base
