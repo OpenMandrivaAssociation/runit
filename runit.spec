@@ -11,6 +11,7 @@ Group:		System/Base
 URL:		https://smarden.org/runit/
 Source0:	http://smarden.org/runit/%{name}-%{version}.tar.gz
 %if %{with diet}
+BuildRequires:	make
 BuildRequires:	dietlibc-devel >= 0.32
 %endif
 BuildRequires:	glibc-static-devel
